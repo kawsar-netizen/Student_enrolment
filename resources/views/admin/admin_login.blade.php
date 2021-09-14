@@ -34,7 +34,7 @@
               }
               ?>
               </p>
-              <form method="post" action="{{url('/admin_login')}}">
+              <form method="post" action="{{route('admin_login')}}">
               @csrf
                 <div class="form-group">
                   <label>Username or email *</label>

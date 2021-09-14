@@ -190,7 +190,7 @@
               <a class="nav-link" href="{{URL::to('/addstudnet')}}">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
-                <span class="badge badge-danger badge-pill ml-auto">New</span>
+                <!-- <span class="badge badge-danger badge-pill ml-auto">New</span> -->
               </a>
             </li>
             <li class="nav-item">

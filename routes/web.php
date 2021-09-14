@@ -1,5 +1,19 @@
 <?php
 
+use App\Http\Controllers\BBAController;
+use App\Http\Controllers\CSEController;
+use App\Http\Controllers\ECEController;
+use App\Http\Controllers\EEEController;
+use App\Http\Controllers\LLBController;
+use App\Http\Controllers\MBAController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\AddteacherController;
+use App\Http\Controllers\AllteacherController;
+use App\Http\Controllers\TutionfreeController;
+use App\Http\Controllers\AddstudentsController;
+use App\Http\Controllers\AllstudentsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +25,7 @@
 |
 */
 
-Route::get('/','AdminController@student_login')->name('student_login');
+// Route::get('/','AdminController@student_login')->name('student_login');
 
 Route::get('/backend','AdminController@admin_login')->name('admin_login');
 

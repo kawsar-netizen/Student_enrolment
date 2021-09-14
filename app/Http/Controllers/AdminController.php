@@ -44,7 +44,6 @@ class AdminController extends Controller
         ->where('admin_email',$email)
         ->where('admin_password',$password)
         ->first();
-        // print_r($result);
         if($result){
             Session::put('admin_email',$request->admin_email);
             Session::put('admin_id',$request->admin_id);

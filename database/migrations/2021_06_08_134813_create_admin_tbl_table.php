@@ -14,11 +14,10 @@ class CreateAdminTblTable extends Migration
     public function up()
     {
         Schema::create('admin_tbl', function (Blueprint $table) {
-            $table->bigIncrements('admin_id');
+            $table->bigIncrements('admin_id')->nullable();
             $table->string('admin_name');
             $table->string('admin_email');
             $table->string('admin_password');
-            $table->string('admin_phone');
             $table->timestamps();
         });
     }
