@@ -51,9 +51,9 @@
                            @endif
                           </td>
                           <td>
-                            <button class="btn btn-outline-primary">View</button><br><br>
-                            <button class="btn btn-outline-warning">Edit</button><br><br>
-                            <button class="btn btn-outline-danger">Delete</button>
+                            <a href="{{URL::to('/student_view/'.$llb_student->student_id)}}"><button class="btn btn-outline-primary">View</button></a><br><br>
+                            <a href="{{URL::to('/student_edit/'.$llb_student->student_id)}}"><button class="btn btn-outline-warning">Edit</button></a><br><br>
+                            <a href="{{URL::to('/student_delete/'.$llb_student->student_id)}}" id="delete"><button class="btn btn-outline-danger">Delete</button></a>
                           </td>
                       </tr>
                       @endforeach

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<div class="col-12 col-lg-6 grid-margin">
+<div class="col-12 col-lg-8 grid-margin">
                   <div class="card">
                       <div class="card-body">
                           <h2 class="card-title">Add Student</h2>
@@ -52,7 +52,6 @@
                                     <label for="exampleInputFile" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Image</label>
                                     <input type="file" class="form-control-file" name="student_image" id="exampleInputFile" aria-describedby="fileHelp2">
                                   </div>
-                                  <small id="fileHelp2" class="form-text text-muted ml-3">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                               </div>
                               <div class="form-group">
                                   <label for="exampleInputEmail1">Admission Year</label>
@@ -69,7 +68,7 @@
                                       <option value="6">LLB</option>
                                   </select>
                               </div>
-                              <button type="submit" class="btn btn-success btn-block">Submit</button>
+                              <button type="submit" class="btn btn-primary btn-block">Submit</button>
                           </form>
                       </div>
                   </div>

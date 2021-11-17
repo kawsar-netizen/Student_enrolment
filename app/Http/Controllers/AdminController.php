@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use DB;
 use Session;
+use Illuminate\Http\Request;
+use App\Http\Requests\LoginDashboard;
+use Illuminate\Support\Facades\Redirect;
 Session_start();
 class AdminController extends Controller
 {
@@ -29,7 +30,7 @@ class AdminController extends Controller
     public function logout(){
         Session::put('admin_email',NULL);
         Session::put('admin_id',NULL);
-        return Redirect::to('/backend');
+        return Redirect::to('/');
         }
 
 
@@ -38,20 +39,12 @@ class AdminController extends Controller
     }
 
     public function login_dashboard( Request $request){
-        $email = $request->admin_email;
-        $password = md5($request->admin_password);
-        $result = DB::table('admin_tbl')
-        ->where('admin_email',$email)
-        ->where('admin_password',$password)
-        ->first();
-        if($result){
-            Session::put('admin_email',$request->admin_email);
-            Session::put('admin_id',$request->admin_id);
-             return Redirect::to('/admin_dashboard');   
-        }
-        else{
-            Session::put('exception','Email or Password Invalid');
-            return Redirect::to('/backend');
-        }
-    }
+    	$data = $request->only('admin_email', 'admin_password');
+
+    	if ($data) {
+    		return redirect()->intended('/admin_dashboard');
+    	} else {
+    		return redirect()->route('admin_login')->withErrors(['Invalid username and password']);
+    	}
+}
 }

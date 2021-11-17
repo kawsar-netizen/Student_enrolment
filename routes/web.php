@@ -27,64 +27,64 @@ use App\Http\Controllers\AllstudentsController;
 
 // Route::get('/','AdminController@student_login')->name('student_login');
 
-Route::get('/backend','AdminController@admin_login')->name('admin_login');
+Route::get('/',[AdminController::class,'admin_login'])->name('admin_login');
 
 //Logout dashboard....
 
-Route::get('/logout','AdminController@logout')->name('logout');
+Route::get('/logout',[AdminController::class,'logout'])->name('logout');
 
 // Admin Dashboard......
 
-Route::get('/admin_dashboard','AdminController@admin_dashboard')->name('admin_dashboard');
+Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard'])->name('admin_dashboard');
 
-Route::post('/admin_login','AdminController@login_dashboard')->name('admin_login');
+Route::post('/admin_login',[AdminController::class,'login_dashboard'])->name('admin_login');
 
-Route::get('/view_profile','AdminController@view_profile')->name('view_profile');
+Route::get('/view_profile',[AdminController::class,'view_profile'])->name('view_profile');
 
-Route::get('/setting','AdminController@setting')->name('setting');
+Route::get('/setting',[AdminController::class,'setting'])->name('setting');
 
 
 //Addstudent Route...
 
-Route::get('/addstudnet','AddstudentsController@addstudnet')->name('addstudnet');
+Route::get('/addstudnet',[AddstudentsController::class,'addstudnet'])->name('addstudnet');
 
-Route::post('/save_studnet','AddstudentsController@savestudent')->name('savestudent');
+Route::post('/save_studnet',[AddstudentsController::class,'savestudent'])->name('savestudent');
 
 //Allstudent Route....
 
-Route::get('/allstudnet','AllstudentsController@allstudnet')->name('allstudnet');
+Route::get('/allstudnet',[AllstudentsController::class,'allstudnet'])->name('allstudnet');
 
-Route::get('/student_view/{id}','AllstudentsController@studentview')->name('studentview');
+Route::get('/student_view/{id}',[AllstudentsController::class,'studentview'])->name('studentview');
 
-Route::get('/student_edit/{id}','AllstudentsController@studentedit')->name('studentedit');
+Route::get('/student_edit/{id}',[AllstudentsController::class,'studentedit'])->name('studentedit');
 
-Route::post('/student_update/{id}','AllstudentsController@studentupdate')->name('studentupdate');
+Route::post('/student_update/{id}',[AllstudentsController::class,'studentupdate'])->name('studentupdate');
 
-Route::get('/student_delete/{id}','AllstudentsController@student_delete')->name('student_delete');
+Route::get('/student_delete/{id}',[AllstudentsController::class,'student_delete'])->name('student_delete');
 
 //All Route pages are her......
-Route::get('/tutionfree','TutionfreeController@tutionfree')->name('tutionfree');
+Route::get('/tutionfree',[TutionfreeController::class,'tutionfree'])->name('tutionfree');
 
-Route::get('/result','ResultController@result')->name('result');
+Route::get('/result',[ResultController::class,'result'])->name('result');
 
 //All Subject route are her......
-Route::get('/cse','CSEController@cse')->name('cse');
+Route::get('/cse',[CSEController::class,'cse'])->name('cse');
 
-Route::get('/eee','EEEController@eee')->name('eee');
+Route::get('/eee',[EEEController::class,'eee'])->name('eee');
 
-Route::get('/bba','BBAController@bba')->name('bba');
+Route::get('/bba',[BBAController::class,'bba'])->name('bba');
 
-Route::get('/mba','MBAController@mba')->name('mba');
+Route::get('/mba',[MBAController::class,'mba'])->name('mba');
 
-Route::get('/ece','ECEController@ece')->name('ece');
+Route::get('/ece',[ECEController::class,'ece'])->name('ece');
 
-Route::get('/llb','LLBController@llb')->name('llb');
+Route::get('/llb',[LLBController::class,'llb'])->name('llb');
 
 //All Teacher route are her......
-Route::get('/allteacher','AllteacherController@allteacher')->name('allteacher');
+Route::get('/allteacher',[AllteacherController::class,'allteacher'])->name('allteacher');
 
-Route::get('/addteacher','AddteacherController@addteacher')->name('addteacher');
+Route::get('/addteacher',[AddteacherController::class,'addteacher'])->name('addteacher');
 
-Route::post('/store_teacher','AddteacherController@storeteacher')->name('storeteacher');
+Route::post('/store_teacher',[AddteacherController::class,'storeteacher'])->name('storeteacher');
 
-Route::get('/delete_teacher/{id}','AllteacherController@deleteteacher')->name('deleteteacher');
+Route::get('/delete_teacher/{id}',[AllteacherController::class,'deleteteacher'])->name('deleteteacher');
