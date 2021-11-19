@@ -1,4 +1,9 @@
-
+@php 
+    $student_id = Session::get('student_id');
+    $student_info = DB::table('student_tbl')
+    ->where('student_id',$student_id)
+    ->first();
+@endphp
 @include('admin/link/header')
 
 <body class="sidebar-dark">
@@ -102,32 +107,6 @@
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
-              <i class="mdi mdi-message-outline"></i>
-
-            </a>
-            <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-              <a class="dropdown-item" href="{{URL::to('view_profile')}}">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">View Profile</p>
-                </div>
-              </a>
-              <a class="dropdown-item" href="{{URL::to('/logout')}}">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">Logout</p>
-                </div>
-              </a>
-            </div>
-          </li>
-        </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -144,87 +123,23 @@
               <img src="{{asset('images/khan7.jpg')}}" alt="">
             </div>
             <div class="details">
-            <p class="user-name">Md. Kawsar Khan Sizar</p>
-             <a href="{{route('admin_dashboard')}}"><span class="designation">Developer</span></a> 
+            <p class="user-name">WebcoderIT</p>
             </div>
           </div>
           <ul class="nav">
           <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#student_submenu" aria-expanded="false" aria-controls="student_submenu">
-              <i class="fas fa-user-graduate menu-icon"> </i>
-                <span class="menu-title">Students</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
+              <a class="nav-link"  href="{{url('/student_profile')}}">
+              <i class="far fa-address-card menu-icon"> </i>
+                <span class="menu-title">Profile</span>
               </a>
-              <div class="collapse" id="student_submenu">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/allstudnet')}}">All Student</a>
-                    <a class="nav-link" href="{{URL::to('/addstudnet')}}">Add Student</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#layoutsSubmenu" aria-expanded="false" aria-controls="layoutsSubmenu">
-                <i class="mdi mdi-arrow-expand-all menu-icon"></i>
-                <span class="menu-title">Student Information</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
+              <a class="nav-link" href="{{URL::to('/student_setting')}}">
+              <i class="fas fa-cog menu-icon"> </i>
+                <span class="menu-title">Setting</span>
               </a>
-              <div class="collapse" id="layoutsSubmenu">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/tutionfree')}}">Tution Free</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/result')}}">Result</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
-                <i class="fab fa-discourse menu-icon"></i>
-                <span class="menu-title">Course</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
+              <a class="nav-link" data-toggle="collapse" href="{{url('student_logout')}}">
+              <i class="fas fa-sign-out-alt menu-icon"> </i>
+                <span class="menu-title">Logout</span>
               </a>
-              <div class="collapse" id="sidebar_layouts">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('cse')}}">CSE </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/eee')}}">EEE </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/ece')}}">ECE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/bba')}}">BBA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/mba')}}">MBA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/llb')}}">LLB</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <!--main pages end-->
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#teacher_Submenu" aria-expanded="false" aria-controls="teacher_Submenu">
-              <i class="fas fa-chalkboard-teacher menu-icon"></i>
-                <span class="menu-title">Teachers</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
-              </a>
-              <div class="collapse" id="teacher_Submenu">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/allteacher')}}">All Teacher</a>
-                    <a class="nav-link" href="{{URL::to('/addteacher')}}">Add Teacher</a>
-                  </li>
-                </ul>
-              </div>
             </li>
           </ul>
         </nav>

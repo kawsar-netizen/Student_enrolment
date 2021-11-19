@@ -32,7 +32,6 @@
                                     <label for="exampleInputFile" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Image</label>
                                     <input type="file" class="form-control-file" name="teachers_image" id="exampleInputFile" aria-describedby="fileHelp2">
                                   </div>
-                                  <small id="fileHelp2" class="form-text text-muted ml-3">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                               </div>
                               <div class="form-group">
                                   <label for="exampleInputEmail1">Teacher Department</label>

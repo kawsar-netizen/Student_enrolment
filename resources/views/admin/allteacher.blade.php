@@ -12,8 +12,8 @@
                             }
                             ?>
                           </p>
-              <div class="row">
-                <div class="col-12">
+              <div class="row table-responsive">
+                <div class="col-12 col-lg-12">
                   <table id="order-listing" class="table table-striped" style="width:100%;">
                     <thead>
                       <tr>

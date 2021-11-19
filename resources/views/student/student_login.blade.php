@@ -26,14 +26,23 @@
           <div class="card col-lg-4 mx-auto">
             <div class="card-body px-5 py-5">
               <h3 class="card-title text-left mb-3">Login</h3>
-              <form>
+              <p class="alert-danger"><?php
+              $message = Session::get('exception');
+              if($message){
+                echo $message;
+                Session::put('exception',null);
+              }
+              ?>
+              </p>
+              <form method="post" action="{{url('/studentlogin')}}">
+              @csrf
                 <div class="form-group">
                   <label>Username or email *</label>
-                  <input type="text" class="form-control p_input">
+                  <input type="text" class="form-control p_input" name="student_email" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                   <label>Password *</label>
-                  <input type="text" class="form-control p_input">
+                  <input type="text" class="form-control p_input" name="student_password" placeholder="Enter your password">
                 </div>
                 <div class="form-group d-flex align-items-center justify-content-between">
                   <div class="icheck-square">

@@ -8,6 +8,7 @@ use App\Http\Controllers\LLBController;
 use App\Http\Controllers\MBAController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AddteacherController;
 use App\Http\Controllers\AllteacherController;
 use App\Http\Controllers\TutionfreeController;
@@ -24,12 +25,13 @@ use App\Http\Controllers\AllstudentsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Student Login Dashboard here....
+Route::get('/',[AdminController::class,'student_login'])->name('student_login');
 
-// Route::get('/','AdminController@student_login')->name('student_login');
+// Admin Login Dashboard here....
+Route::get('/backend',[AdminController::class,'admin_login'])->name('admin_login');
 
-Route::get('/',[AdminController::class,'admin_login'])->name('admin_login');
-
-//Logout dashboard....
+// Admin Logout dashboard....
 
 Route::get('/logout',[AdminController::class,'logout'])->name('logout');
 
@@ -37,11 +39,19 @@ Route::get('/logout',[AdminController::class,'logout'])->name('logout');
 
 Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard'])->name('admin_dashboard');
 
-Route::post('/admin_login',[AdminController::class,'login_dashboard'])->name('admin_login');
+Route::post('/adminlogin',[AdminController::class,'admin_login_dashboard'])->name('adminlogin');
 
 Route::get('/view_profile',[AdminController::class,'view_profile'])->name('view_profile');
 
 Route::get('/setting',[AdminController::class,'setting'])->name('setting');
+
+// Student Dashboard....
+
+Route::post('/studentlogin',[AdminController::class,'student_login_dashboard']);
+
+Route::get('/student_dashboard',[AdminController::class,'student_dashboard']);
+
+Route::get('/student_profile',[StudentController::class,'studentProfile'])->name('profile');
 
 
 //Addstudent Route...
@@ -88,3 +98,9 @@ Route::get('/addteacher',[AddteacherController::class,'addteacher'])->name('addt
 Route::post('/store_teacher',[AddteacherController::class,'storeteacher'])->name('storeteacher');
 
 Route::get('/delete_teacher/{id}',[AllteacherController::class,'deleteteacher'])->name('deleteteacher');
+
+Route::get('/teachers_view/{id}',[AllteacherController::class,'teacherview'])->name('teacherview');
+
+Route::get('/teachers_edit/{id}',[AllteacherController::class,'teacherEdit'])->name('teacherEdit');
+
+Route::post('/teachers_update/{id}',[AllteacherController::class,'teacherUpdate'])->name('teacherUpdate');

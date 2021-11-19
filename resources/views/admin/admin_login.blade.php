@@ -34,11 +34,11 @@
               }
               ?>
               </p>
-              <form method="post" action="{{route('admin_login')}}">
+              <form action="{{url('/adminlogin')}}" method="post">
               @csrf
                 <div class="form-group">
                   <label>Username or email *</label>
-                  <input type="text" class="form-control p_input" name="admin_email" placeholder="Enter your email">
+                  <input type="text" class="form-control p_input" name = "admin_email" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                   <label>Password *</label>

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<div class="col-12 col-lg-8 grid-margin">
+<div class="col-12 col-lg-6 grid-margin">
                   <div class="card">
                       <div class="card-body">
                           <h2 class="card-title">Add Student</h2>

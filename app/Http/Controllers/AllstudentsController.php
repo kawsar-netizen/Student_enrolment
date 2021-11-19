@@ -27,8 +27,6 @@ class AllstudentsController extends Controller
         ->select('*')
         ->where('student_id',$id)
         ->first();
-        // print_r($student_view_info);
-        // return view('admin/student_view');
         $manage_student_info = view('admin/student_view')
         ->with('student_view_info',$student_view_info);
         return view('layout')->with('student_view',$manage_student_info);
@@ -41,7 +39,6 @@ class AllstudentsController extends Controller
         ->select('*')
         ->where('student_id',$id)
         ->first();
-    //  return view('admin/student_edit');
     $manage_update_info = view('admin/student_edit')
     ->with('update_info',$student_update_info);
     return view('layout')->with('manage_update_info',$manage_update_info);
@@ -49,8 +46,6 @@ class AllstudentsController extends Controller
     //Student update route are here....
 
      public function studentupdate( Request $request,$id){
-        //  echo "<pre>";
-        //  print_r($id);
          $data = array();
          $data['student_name'] = $request->student_name;
          $data['student_fathername'] = $request->student_fathername;
