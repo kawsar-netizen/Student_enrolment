@@ -35,6 +35,8 @@ Route::get('/backend',[AdminController::class,'admin_login'])->name('admin_login
 
 Route::get('/logout',[AdminController::class,'logout'])->name('logout');
 
+Route::get('/student_logout',[AdminController::class,'student_logout'])->name('student_logout');
+
 // Admin Dashboard......
 
 Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard'])->name('admin_dashboard');
@@ -51,7 +53,9 @@ Route::post('/studentlogin',[AdminController::class,'student_login_dashboard']);
 
 Route::get('/student_dashboard',[AdminController::class,'student_dashboard']);
 
-Route::get('/student_profile',[StudentController::class,'studentProfile'])->name('profile');
+Route::get('/student_profile',[AdminController::class,'studentProfile'])->name('profile');
+
+Route::get('/student_setting',[AdminController::class,'studentsetting'])->name('setting');
 
 
 //Addstudent Route...

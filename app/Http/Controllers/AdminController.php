@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use Session;
+// use DB;
+// use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginDashboard;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 Session_start();
 class AdminController extends Controller
@@ -23,13 +25,12 @@ class AdminController extends Controller
     public function setting(){
         return view('admin/setting');
          }
-             
+     //Admin logout dashboard........        
     public function logout(){
         Session::put('admin_email',NULL);
         Session::put('admin_id',NULL);
         return Redirect::to('/backend');
         }
-
 
     public function admin_dashboard(){
         return view('admin/dashboard');
@@ -81,4 +82,40 @@ class AdminController extends Controller
             }
     }
 
+
+    public function studentProfile(){
+
+        $student_id = Session::get('student_id');
+       $student_view_info = DB::table('student_tbl')
+       ->select('*')
+       ->where('student_id',$student_id)
+       ->first();
+       echo "</pre>";
+       print_r($student_view_info);
+       // $manage_student_info = view('student.student_view')
+       // ->with('student_view_info',$student_view_info);
+       // return view('layout')->with('student_view',$manage_student_info);
+
+   }
+        //Student logout dashboard .......       
+        public function student_logout(){
+            Session::put('student_email',NULL);
+            Session::put('student_id',NULL);
+            return Redirect::to('/');
+            }
+    
+        //Student setting dashboard .......  
+            public function studentsetting(){
+                return view('student.student_setting');
+                // $student_id = Session::get('student_id');
+                // $student_update_info = DB::table('student_tbl')
+                // ->select('*')
+                // ->where('student_id',$student_id)
+                // ->first();
+                // echo "</pre>";
+                // print_r($student_update_info);
+            // $manage_update_info = view('student.student_setting')
+            // ->with('student_update_info',$student_update_info);
+            // return view('student_layout')->with('manage_update_info',$manage_update_info);
+                 }
 }

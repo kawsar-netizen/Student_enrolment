@@ -105,21 +105,22 @@
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
-              <i class="mdi mdi-message-outline"></i>
+            <i class="fas fa-align-justify"></i>
 
             </a>
             <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-              <a class="dropdown-item" href="{{URL::to('view_profile')}}">
+              <!-- <a class="dropdown-item" href="{{URL::to('view_profile')}}">
                 <div class="sender-img">
                   <img src="http://via.placeholder.com/47x47" alt="">
                 </div>
                 <div class="sender">
                   <p class="Sende-name">View Profile</p>
                 </div>
-              </a>
+              </a> -->
               <a class="dropdown-item" href="{{URL::to('/logout')}}">
                 <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
+                <i class="fas fa-sign-out-alt"></i>
+                  <!-- <img src="http://via.placeholder.com/47x47" alt=""> -->
                 </div>
                 <div class="sender">
                   <p class="Sende-name">Logout</p>
@@ -144,8 +145,8 @@
               <img src="{{asset('images/khan7.jpg')}}" alt="">
             </div>
             <div class="details">
-            <p class="user-name">Md. Kawsar Khan Sizar</p>
-             <a href="{{route('admin_dashboard')}}"><span class="designation">Developer</span></a> 
+            <p class="user-name">WebCoderIT</p>
+             <a href="{{route('admin_dashboard')}}"><span class="designation">Developer Company</span></a> 
             </div>
           </div>
           <ul class="nav">
@@ -164,7 +165,7 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#layoutsSubmenu" aria-expanded="false" aria-controls="layoutsSubmenu">
                 <i class="mdi mdi-arrow-expand-all menu-icon"></i>
                 <span class="menu-title">Student Information</span>
@@ -180,11 +181,11 @@
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                 <i class="fab fa-discourse menu-icon"></i>
-                <span class="menu-title">Course</span>
+                <span class="menu-title">Courses</span>
                 <i class="mdi mdi-chevron-down menu-arrow"></i>
               </a>
               <div class="collapse" id="sidebar_layouts">

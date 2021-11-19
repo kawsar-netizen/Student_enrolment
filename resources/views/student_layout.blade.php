@@ -1,11 +1,11 @@
-@php 
-    $student_id = Session::get('student_id');
-    $student_info = DB::table('student_tbl')
-    ->where('student_id',$student_id)
-    ->first();
-@endphp
-@include('admin/link/header')
 
+@include('admin/link/header')
+    @php 
+        $student_id = Session::get('student_id');
+        $student_info = DB::table('student_tbl')
+        ->where('student_id',$student_id)
+        ->first();
+    @endphp
 <body class="sidebar-dark">
   <!-- partial:partials/_settings-panel.html -->
   <div class="settings-panel">
@@ -136,7 +136,7 @@
               <i class="fas fa-cog menu-icon"> </i>
                 <span class="menu-title">Setting</span>
               </a>
-              <a class="nav-link" data-toggle="collapse" href="{{url('student_logout')}}">
+              <a class="nav-link" href="{{url('/student_logout')}}">
               <i class="fas fa-sign-out-alt menu-icon"> </i>
                 <span class="menu-title">Logout</span>
               </a>
