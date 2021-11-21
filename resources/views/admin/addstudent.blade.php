@@ -3,6 +3,9 @@
 <div class="col-12 col-lg-6 grid-margin">
                   <div class="card">
                       <div class="card-body">
+                        <a href="{{route('allstudnet')}}">
+                            <button class="btn btn-primary">Back</button></br></br>
+                        </a>
                           <h2 class="card-title">Add Student</h2>
                           <p class="alert-success"><?php
                             $message = Session::get('exception');

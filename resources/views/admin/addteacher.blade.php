@@ -3,6 +3,9 @@
 <div class="col-12 col-lg-6 grid-margin">
                   <div class="card">
                       <div class="card-body">
+                      <a href="{{route('allteacher')}}">
+                            <button class="btn btn-primary">Back</button></br></br>
+                        </a>
                           <h2 class="card-title">Add Teacher</h2>
                           <p class="alert-success"><?php
                             $message = Session::get('exception');
@@ -44,7 +47,7 @@
                                       <option value="6">LLB</option>
                                   </select>
                               </div>
-                              <button type="submit" class="btn btn-success btn-block">Add Teacher</button>
+                              <button type="submit" class="btn btn-primary btn-block">Add Teacher</button>
                           </form>
                       </div>
                   </div>

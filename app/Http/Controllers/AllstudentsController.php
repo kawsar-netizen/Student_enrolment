@@ -13,7 +13,7 @@ class AllstudentsController extends Controller
     public function allstudnet(){
         $allstudent_info = DB::table('student_tbl')->get();
 
-        $manage_student = view('admin/allstudent')->with('all_student_info',$allstudent_info);
+        $manage_student = view('admin.allstudent')->with('all_student_info',$allstudent_info);
         
         return view('layout')->with('allstudent',$manage_student);
 
@@ -27,7 +27,7 @@ class AllstudentsController extends Controller
         ->select('*')
         ->where('student_id',$id)
         ->first();
-        $manage_student_info = view('admin/student_view')
+        $manage_student_info = view('admin.student_view')
         ->with('student_view_info',$student_view_info);
         return view('layout')->with('student_view',$manage_student_info);
     }
@@ -39,7 +39,7 @@ class AllstudentsController extends Controller
         ->select('*')
         ->where('student_id',$id)
         ->first();
-    $manage_update_info = view('admin/student_edit')
+    $manage_update_info = view('admin.student_edit')
     ->with('update_info',$student_update_info);
     return view('layout')->with('manage_update_info',$manage_update_info);
      }
